@@ -1,3 +1,11 @@
+.caja_carrito{
+    margin-right: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+}
+
 .carrito{
-    width: 50px;
+    width: 30px;
 }

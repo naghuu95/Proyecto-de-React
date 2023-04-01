@@ -1,10 +1,13 @@
 import { CartWidget } from "../CartWidget/CartWidget"
+import logo from "./assets/rayo.png"
+import "./navBar.css"
 
 const NavBar =()=>{
     return(
         <nav class="navbar navbar-expand-lg header navbar-light py-5">
   <div class="container-fluid">
-    <a class="navbar-brand fs-1 px-4" href="#">FLUX</a>
+    <img src={logo} class="logo" alt= "logo de rayo"/>
+    <a class="navbar-brand fs-1 px-2" href="#">FLUX</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
