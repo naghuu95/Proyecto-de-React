@@ -1,9 +1,12 @@
-import cart from './asset/carrito1.png'
+import cart from './assets/carrito.svg';
+import './cartWidget.css';
+
 
 export const CartWidget = () => {
   return (
     <div>
-        <img scr={cart} alt="cart-widget"/>
+      
+        <img className="carrito" src={cart} alt="Carrito de compras" />
         0
     </div>
   )
