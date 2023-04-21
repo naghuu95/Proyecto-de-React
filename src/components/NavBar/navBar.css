@@ -1,4 +1,25 @@
-.logo{
+.navbar{
+    color: black;
+    
+}
 
-    width: 5vw;
+.link-logo{
+    text-decoration: none;
+}
+
+.logo{
+    font-size: 4rem;
+    color: rgb(111, 0, 95);
+    letter-spacing: 15px;
+}
+
+.my-link{
+    font-size: 1.5rem;
+    text-decoration: none ;
+    color: rgb(170, 170, 170);
+    letter-spacing: 2px;
+}
+
+.my-link:hoover{
+    color: blueviolet;
 }

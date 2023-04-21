@@ -1,0 +1,28 @@
+
+.Contador{
+      color: rgb(94, 255, 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 15rem;
+      background-color: rgb(255, 0, 0);
+}
+
+.Controles{
+      width:10%;
+      display: flex;
+      justify-content: space-evenly;
+      padding-bottom: 10px;
+      background-color: rgb(255, 255, 255);
+}
+
+
+.Boton{
+   
+     font-size: 1.5rem;
+     box-shadow: 4px 4px 6px black;
+     background-color: rgb(223, 23, 90);
+     border-radius: 3px;
+     border: 3px solid rgb(244, 158, 0);
+}

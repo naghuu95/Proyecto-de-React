@@ -1,15 +1,32 @@
 
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/IitemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListcontainer'
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+
 
 function App() {
   return (
+
+    
     <div className="App">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-      <NavBar />
-      <ItemListContainer greeting={`Ropa deportiva`}/>
+
+      <BrowserRouter>
+         <NavBar />
+         <Routes>
+          <Route path='/' element={<ItemListContainer/>} />
+          <Route path='/categoria/:categoriaId' element={<ItemListContainer/>} />
+          <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
+          <Route path='*' element={<h1> ERROR 404</h1>} />
+          
+         </Routes>
+         
+      
+      </BrowserRouter>
+
+      
     </div>
   );
 }
