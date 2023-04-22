@@ -22,7 +22,7 @@ export const ItemDetail = ({id,nombre,precio,imagen,stock,descripcion})=>{
                 <img src={imagen} style={{ width: '70%', height: 'auto' }} alt={nombre} />
             </div>
         </Col>
-        <Col className=' d-flex justify-content-center ' md={5}>
+        <Col className=' d-flex justify-content-center mt-4' md={5}>
         <Card style={{ width: '25rem' }} className='col-12  ' id='card_producto'>
 
         <Card.Body>
@@ -33,7 +33,8 @@ export const ItemDetail = ({id,nombre,precio,imagen,stock,descripcion})=>{
           
         </Card.Body>
         <footer>
-        <ItemCount initial={1} stock={10} onAdd={(cantidad)=>console.log('cantidad agregada',cantidad)}/>
+          <p>Unidades </p>
+        <ItemCount inicial={1} stock={10} onAdd={(cantidad)=>console.log('cantidad agregada',cantidad)}/>
             
         </footer>
         </Card>

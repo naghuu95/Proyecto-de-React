@@ -1,5 +1,5 @@
 .navbar{
-    color: black;
+    color: rgb(139, 138, 138);
     
 }
 
@@ -9,17 +9,19 @@
 
 .logo{
     font-size: 4rem;
-    color: rgb(111, 0, 95);
+    color: rgb(114, 114, 114);
     letter-spacing: 15px;
 }
 
 .my-link{
     font-size: 1.5rem;
     text-decoration: none ;
-    color: rgb(170, 170, 170);
+    color: rgb(0, 0, 0);
     letter-spacing: 2px;
 }
 
-.my-link:hoover{
-    color: blueviolet;
+.my-link:hover{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+   
 }

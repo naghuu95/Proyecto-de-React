@@ -13,10 +13,24 @@
 
 }
 
+.titulo_card{
+    font-weight: bold;
+}
+
 .descripcion_producto{
     font-size: 0.8rem;
 }
 
 .imagen {
     width: 100%;
+}
+
+.ver_detalle{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+}
+
+.ver_detalle:hover{
+    color: rgb(68, 68, 68);
 }

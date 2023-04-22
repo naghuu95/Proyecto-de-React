@@ -10,13 +10,13 @@ export const Item = ({id,nombre,precio,imagen,stock})=>{
        <Card style={{ width: '18rem' }} className='col-5 ' id='card_producto'>
         <Card.Img variant="top" src={imagen} />
         <Card.Body>
-          <Card.Title>{nombre}</Card.Title>
+          <Card.Title className='titulo_card'>{nombre}</Card.Title>
           <p> Precio : ${precio}</p>
           <p>Cantidad disponible: {stock} unidades</p>
           
         </Card.Body>
         <footer>
-            <Link to={`/Item/${id}`} >VER DETALLE</Link>
+            <Link className='ver_detalle' to={`/Item/${id}`} >Ver detalle </Link>
         </footer>
         </Card>
 

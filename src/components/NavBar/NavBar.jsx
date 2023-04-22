@@ -14,7 +14,7 @@ const NavBar =()=>{
           </Link>
           </Col >
 
-          <Col className="bg-warning d-flex justify-content-center aling-item-center" md={2}>
+          <Col className=" d-flex justify-content-center aling-item-center" md={2}>
           <CartWidget/>
           </Col>
 
@@ -23,10 +23,10 @@ const NavBar =()=>{
          </Row>
           
 
-          <div className="bg-dark d-flex justify-content-around py-5 my-5" >
-            <NavLink to ={'/categoria/remeras'} className={({isActive})=>isActive? 'ActiveOption' : 'Option my-link'}>Remeras</NavLink>
-            <NavLink to ={'/categoria/shorts'} className={({isActive})=>isActive? 'ActiveOption' : 'Option my-link'}>Shorts</NavLink>
-            <NavLink to ={'/categoria/musculosas'} className={({isActive})=>isActive? 'ActiveOption' : 'Option my-link'}>Musculosas</NavLink>
+          <div className=" d-flex justify-content-around py-5 mb-4" >
+            <NavLink to ={'/categoria/remeras'} className={({isActive})=>isActive? 'ActiveOption my-link' : 'Option my-link'}>Remeras</NavLink>
+            <NavLink to ={'/categoria/shorts'} className={({isActive})=>isActive? 'ActiveOption my-link' : 'Option my-link'}>Shorts</NavLink>
+            <NavLink to ={'/categoria/musculosas'} className={({isActive})=>isActive? 'ActiveOption my-link' : 'Option my-link'}>Musculosas</NavLink>
             
           </div>
   
