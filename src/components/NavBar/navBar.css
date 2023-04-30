@@ -1,3 +1,10 @@
+
+.barra{
+    background-color: rgb(60, 42, 33);
+    display: flex;
+    justify-content: center;
+    
+}
 .navbar{
     color: rgb(139, 138, 138);
     
@@ -8,15 +15,17 @@
 }
 
 .logo{
-    font-size: 4rem;
-    color: rgb(114, 114, 114);
-    letter-spacing: 15px;
+    font-size: 2rem;
+    /*width: 20rem;*/
+    font-weight: bold;
+    color:rgb(0, 0, 0);
+    letter-spacing: 50px;
 }
 
 .my-link{
     font-size: 1.5rem;
     text-decoration: none ;
-    color: rgb(0, 0, 0);
+    color: rgb(213, 206, 163);
     letter-spacing: 2px;
 }
 

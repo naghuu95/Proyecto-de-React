@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Open+Sans:ital,wght@0,300;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Philosopher&family=Poppins:ital,wght@0,300;1,100;1,200&display=swap');
+
+@font-face {
+  font-family: 'Rosmatika';
+  src: local('Rosmatika'), url(./fuentes/RosmatikaRegular-BWA45.ttf) format('truetype');
+  font-family: 'Queen';
+  src: local('Queen'), url(./fuentes/QueensidesLight-ZVj3l.ttf) format('truetype');
+  font-family: 'Praysire';
+  src: local('Praysire'), url(./fuentes/Praysire-Demo.otf) format('opentype');
+}
 .App {
   text-align: center;
-  background-color: rgb(152, 152, 152);
+  background-color: rgb(26, 18, 11);
+  font-family: 'Praysire', sans-serif;
 }
 
 .App-logo {

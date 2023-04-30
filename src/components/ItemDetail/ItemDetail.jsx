@@ -5,13 +5,24 @@ import { ItemCount } from '../ItemCount/ItemCount';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { useState } from 'react';
 
 
-export const ItemDetail = ({id,nombre,precio,imagen,stock,descripcion})=>{
+export const ItemDetail = ({id,nombre,precio,imagen,stock,descripcion,categoria})=>{
     
-    
+  const[cantidad,setCantidad]= useState(0)
 
-
+  const sumarAlCarrito=()=>{
+    const newItem ={
+      id,
+      imagen,
+      nombre,
+      descripcion,
+      categoria,
+      cantidad
+    }
+    console.log(newItem);
+  }
 
     return(
 
@@ -34,8 +45,10 @@ export const ItemDetail = ({id,nombre,precio,imagen,stock,descripcion})=>{
         </Card.Body>
         <footer>
           <p>Unidades </p>
-        <ItemCount inicial={1} stock={10} onAdd={(cantidad)=>console.log('cantidad agregada',cantidad)}/>
-            
+        <ItemCount max={stock} modify={setCantidad} counter={cantidad}/>
+        
+        <Button variant="outline-secondary" className='mt-3' onClick={sumarAlCarrito}  > Agregar al carrito</Button>
+        
         </footer>
         </Card>
 
