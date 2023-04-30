@@ -4,13 +4,28 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListcontainer'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import { CartContext } from './components/context/CartContext';
+import { useState } from 'react';
 
 
 function App() {
+
+const [carrito,setCarrito]= useState([])
+
+console.log(carrito);
+
+const addToCart =(item)=>{
+  setCarrito([...carrito,item])
+}
+
+const calcularCantidad =()=>{
+  return carrito.reduce((acc,prod)=> acc + prod.cantidad , 0)
+}
+
   return (
 
-    
+
+    <CartContext.Provider value={{addToCart, calcularCantidad}}>
     <div className="App">
 
       <BrowserRouter>
@@ -28,6 +43,7 @@ function App() {
 
       
     </div>
+    </CartContext.Provider>
   );
 }
 

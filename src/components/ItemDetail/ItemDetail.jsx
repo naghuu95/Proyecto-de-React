@@ -5,10 +5,13 @@ import { ItemCount } from '../ItemCount/ItemCount';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from '../context/CartContext';
 
 
 export const ItemDetail = ({id,nombre,precio,imagen,stock,descripcion,categoria})=>{
+
+  const {addToCart}= useContext(CartContext)
     
   const[cantidad,setCantidad]= useState(0)
 
@@ -22,6 +25,7 @@ export const ItemDetail = ({id,nombre,precio,imagen,stock,descripcion,categoria}
       cantidad
     }
     console.log(newItem);
+    addToCart(newItem)
   }
 
     return(
