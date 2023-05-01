@@ -22,7 +22,8 @@ export const ItemDetail = ({id,nombre,precio,imagen,stock,descripcion,categoria}
       nombre,
       descripcion,
       categoria,
-      cantidad
+      cantidad,
+      precio
     }
     console.log(newItem);
     addToCart(newItem)

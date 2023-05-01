@@ -21,7 +21,8 @@ const NavBar =()=>{
             <NavLink to ={'/categoria/remeras'} className={({isActive})=>isActive? 'ActiveOption my-link' : 'Option my-link'}>Remeras</NavLink>
             <NavLink to ={'/categoria/shorts'} className={({isActive})=>isActive? 'ActiveOption my-link' : 'Option my-link'}>Shorts</NavLink>
             <NavLink to ={'/categoria/musculosas'} className={({isActive})=>isActive? 'ActiveOption my-link' : 'Option my-link'}>Musculosas</NavLink>
-            <CartWidget />
+            <Link className="link" to='/cart'><CartWidget /> </Link>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

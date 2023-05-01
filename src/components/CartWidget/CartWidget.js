@@ -12,7 +12,7 @@ export const CartWidget = () => {
     <div class="caja_carrito">
       
         <img class="carrito" src={cart} alt="Carrito de compras" />
-        <span>{calcularCantidad()}</span>
+        <span >{calcularCantidad()}</span>
     </div>
   )
 }
