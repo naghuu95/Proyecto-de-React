@@ -5,41 +5,18 @@ import ItemListContainer from './components/ItemListContainer/ItemListcontainer'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { Cart } from './components/Cart/Cart';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { CartContext } from './components/context/CartContext';
-import { useState } from 'react';
+import {  CartProvider } from './components/context/CartContext';
+
 
 
 function App() {
 
-const [carrito,setCarrito]= useState([])
 
-console.log(carrito);
-
-const addToCart =(item)=>{
-  setCarrito([...carrito,item])
-}
-
-const calcularCantidad =()=>{
-  return carrito.reduce((acc,prod)=> acc + prod.cantidad , 0)
-}
-
-const precioTotal =()=>{
-  return carrito.reduce((acc,prod)=> acc + prod.precio*prod.cantidad,0)
-}
-
-const removerItem=(itemId)=>{
-  const newCart = carrito.filter((prod)=>prod.id !== itemId)
-  setCarrito(newCart)
-}
-
-const vaciarCarrito=()=>{
-  setCarrito([])
-}
 
   return (
 
 
-    <CartContext.Provider value={{addToCart, calcularCantidad,precioTotal,removerItem,carrito,vaciarCarrito}}>
+    <CartProvider >
     <div className="App">
 
       <BrowserRouter>
@@ -58,7 +35,7 @@ const vaciarCarrito=()=>{
 
       
     </div>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 
