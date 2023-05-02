@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Button, Col, Row } from 'react-bootstrap'
 import './Cart.css'
 import { CartContext } from '../context/CartContext'
+import { Link } from 'react-router-dom'
 
 
 
@@ -11,16 +12,26 @@ export const Cart = () => {
 
   return (
     <div className='container d-flex flex-column aling-item-center justify-content-center'>
-        <h1 className='fila py-5'>Resumen de compra</h1>
-        <Row className=' container d-flex fila justify-content-center bg-dark py-2'>
+
+      {
+        carrito.length === 0 
+        ?
+        <>
+        <h3>Carrito vacio</h3>
+        <Link to='/'><Button>Volver a comprar</Button></Link> 
+        </>
+        :
+        <>
+           <h1 className='fila py-5'>Resumen de compra</h1>
+           <Row className=' container d-flex fila justify-content-center bg-dark py-2'>
             
             <Col md={2}>Producto</Col>
             <Col md={2}>Cantidad</Col>
             <Col md={2}>Precio</Col>
-        </Row>
-     {
-        carrito.map((prod)=>(
-        <>
+           </Row>
+         {
+           carrito.map((prod)=>(
+           <>
            <Row className=' fila d-flex justify-content-center align-items-center  pt-5'>
 
             <Col md={2} >
@@ -46,7 +57,7 @@ export const Cart = () => {
              </Button>
             </Col>
 
-            </Row>
+           </Row>
         </>
         ))
       }
@@ -57,9 +68,13 @@ export const Cart = () => {
             <Col md={3} className='fs-4 precio-total'>$ {precioTotal()}</Col>
             <Col md={3}> <Button onClick={vaciarCarrito}>Vaciar Carrito</Button></Col>
         </Row>
+        </>
+      }
+    
      
 
 
     </div>
+       
   )
 }
