@@ -12,7 +12,8 @@ const NavBar =()=>{
       <Container className=" bg-primary d-flex  justify-content-around">
         <Navbar.Brand href="#home">
         <Link to='/' className="link-logo  bg-primary  ">
-            <h2 className="logo bg-warning">FLUX</h2>
+         
+            <h2 className="logo bg-warning"> FLUX</h2>
         </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

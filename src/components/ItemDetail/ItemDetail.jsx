@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
 
 export const ItemDetail = ({id,nombre,precio,imagen,stock,descripcion,categoria})=>{
@@ -53,6 +54,7 @@ export const ItemDetail = ({id,nombre,precio,imagen,stock,descripcion,categoria}
         <ItemCount max={stock} modify={setCantidad} counter={cantidad}/>
         
         <Button variant="outline-secondary" className='mt-3' onClick={sumarAlCarrito}  > Agregar al carrito</Button>
+        <Link to='/cart'> <Button> Ir al carrito</Button> </Link>
         
         </footer>
         </Card>

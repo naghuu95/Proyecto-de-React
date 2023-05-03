@@ -66,7 +66,8 @@ export const Cart = () => {
         <Row className='fila my-5 py-2 d-flex justify-content-around bg-dark'>
             <Col md={4} className='fs-4 precio-total'>Precio total </Col>
             <Col md={3} className='fs-4 precio-total'>$ {precioTotal()}</Col>
-            <Col md={3}> <Button onClick={vaciarCarrito}>Vaciar Carrito</Button></Col>
+            <Col md={2}> <Button onClick={vaciarCarrito}>Vaciar Carrito</Button></Col>
+            <Col md={2}> <Link to='/checkout' className='btn btn-secondary'>Terminar compra </Link> </Col>
         </Row>
         </>
       }
