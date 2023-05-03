@@ -24,7 +24,24 @@ const ItemListContainer =({greeting})=>{
 
         const db = getFirestore();
 
-        const productos= db.collection('productos')
+        const productos =categoriaId
+                         ? db.collection('productos').where('categoria','==',categoriaId)
+                         :db.collection('productos')
+                         productos.get()
+                             .then((res)=>{
+                                const newItem =res.docs.map((doc)=>{
+                                    return {id: doc.id , ...doc.data()}
+                                })
+                                console.table(newItem)
+                                setProductos(newItem)
+                             })
+                             .catch((error)=> console.log(error))
+                             .finally(()=>{
+                                setLoading(false)
+                             })
+                            
+
+        /*const productos= db.collection('productos')
 
         if(categoriaId){
             const filtrado = productos.where("categoria","==",categoriaId)
@@ -55,7 +72,7 @@ const ItemListContainer =({greeting})=>{
                setLoading(false)
             })
       
-        }
+        }*/
 
         
        },[categoriaId,setLoading])
@@ -83,12 +100,4 @@ export default ItemListContainer
 
 
  
-        /*const asyncFunc= categoriaId ? getProductosByCategoria : getProductos
-
-        asyncFunc(categoriaId)
-            .then(response=>{
-                setProductos(response)
-            })
-            .catch(error=>{
-                console.error(error)
-            })*/
+      
