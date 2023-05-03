@@ -1,9 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
+import { CartContext } from '../context/CartContext'
+import Swal from 'sweetalert2'
+import firebase from 'firebase'
+import { getFirestore } from '../../firebase/config'
+import 'firebase/firestore'
 import { Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
+
+
+
 export const Checkout = () => {
+
+    const {carrito,precioTotal,vaciarCarrito}=useContext(CartContext)
 
     const [nombre,setNombre]=useState("")
 
@@ -20,9 +30,62 @@ export const Checkout = () => {
         console.log("Apellido:",apellido)
         console.log("Email:", email)
         console.log("Telefono:",telefono)
+
+        const orden= {
+            buyer:{
+                nombre,
+                apellido,
+                email,
+                telefono
+            },
+            item:carrito,
+            total_precio: precioTotal(),
+            data:firebase.firestore.Timestamp.fromDate(new Date())
+        }
+        console.log(orden)
+
+
+ //Hacemos funcion para enciar la orden a firebase
+
+        const db=getFirestore()
+
+        const ordenes = db.collection('ordenes')
+    
+        ordenes.add(orden)
+               .then ((res)=>{
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Perfecto',
+                    text: `Su compra a sido realizada con exito, guarde su numero de compra: ${res.id}`,
+                    footer: '<a href="">Seguir comprando</a>',
+                    willClose: () => {
+                        vaciarCarrito()
+                      }
+                  })
+               })
+               .finally(()=>{
+                console.log ('operacion terminada con exito')
+               })
+
+               //actualizamos la cantidad en la base de datos
+
+               carrito.forEach((item)=>{
+                const docRef=db.collection('productos').doc(item.id)
+
+                docRef.get()
+                      .then((doc)=>{
+                        docRef.update({
+                            stock: doc.data().stock -item.cantidad
+                        })
+                        
+                      })
+               })
+
     }
 
+   
     
+
   
     return (
 
