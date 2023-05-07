@@ -1,3 +1,11 @@
+.carrito_vacio{
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .fila{
     color: rgb(255, 255, 255);
 }

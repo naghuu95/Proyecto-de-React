@@ -1,13 +1,10 @@
-.caja_carrito{
-    margin-right: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10vw;
+.caja-carrito{
+    width: 60%;
 }
 
 .carrito{
-    width: 30px;
+    width: 1.7rem;
+    color:rgb(255, 255, 255)
 }
 
 span{

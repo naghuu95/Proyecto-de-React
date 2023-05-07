@@ -1,0 +1,25 @@
+.caja_spinner{
+    width: 100%;
+    height:42rem;
+    display: flex;
+   flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.spinner{
+    animation: spin 1s linear infinite;
+    font-size: 6rem;
+      
+}
+
+@keyframes spin{
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

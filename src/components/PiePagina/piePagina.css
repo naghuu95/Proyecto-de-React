@@ -1,0 +1,14 @@
+.piepagina{
+    background-color: black;
+}
+
+.copy{
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    background-color: rgb(48, 48, 48);
+    
+}
+
+.copy a {
+    text-decoration: none;
+}

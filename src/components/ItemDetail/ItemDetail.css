@@ -1,0 +1,62 @@
+.detalle{
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+
+    
+}
+
+#boton1{
+    font-size: 0.8rem;
+    background-color: rgba(94, 94, 94, 0.219);
+    border-color: blanchedalmond;
+}
+#boton1:hover{
+   
+    background-color: rgb(4, 4, 4);
+    border-color: rgb(127, 2, 75);
+}
+
+
+#boton2{
+    font-size: 0.8rem;
+    background-color: rgba(94, 94, 94, 0.219);
+    border-color: blanchedalmond;
+}
+
+#boton2:hover{
+   
+    background-color: rgb(4, 4, 4);
+    border-color: rgb(127, 2, 75);
+}
+
+#talles{
+    width: 60%;
+   
+}
+
+
+.talle{
+    color: rgb(0, 0, 0);
+    background-color: rgb(79, 79, 79);
+    width: 100px;
+    height: 50px;
+    border-radius: 3px;
+    border: 3px solid rgb(153, 153, 153);
+}
+
+.talle:hover{
+    color:rgb(0, 0, 0);
+    border-color: blueviolet;
+    background-color: rgb(151, 58, 114);
+}
+
+Link{
+    text-decoration: none;
+}
+
+
+.mensaje{
+    background-color: rgba(72, 72, 72, 0.685);
+    color: aliceblue;
+}

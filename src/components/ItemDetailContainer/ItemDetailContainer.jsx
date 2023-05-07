@@ -3,9 +3,8 @@ import { useEffect,useState } from "react"
 //importamos getFirestore
 import { getFirestore } from "../../firebase/config";
 import { ItemDetail } from "../ItemDetail/ItemDetail"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSpinner} from '@fortawesome/free-solid-svg-icons';
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
+import {ImSpinner10} from 'react-icons/im'
 import './ItemDetailContainer.css'
 
 
@@ -41,9 +40,16 @@ import './ItemDetailContainer.css'
     },[itemId])
 
     return(
-        <div className="bg-dark row ">
+        <div className=" ">
          {
-            loading ? <FontAwesomeIcon className=" loading fs-1 fa-spin" icon={faSpinner} /> : <ItemDetail {... producto}/>
+            loading ?
+            <div className='caja_spinner'>
+            <ImSpinner10 className="spinner"/>
+            <h3 className="pt-3 ps-3 fs-5"> Cargando . . .</h3>
+            </div>
+            
+            /* <FontAwesomeIcon className=" loading fs-1 fa-spin" icon={faSpinner} />*/
+             : <ItemDetail {... producto}/>
          }
   
            

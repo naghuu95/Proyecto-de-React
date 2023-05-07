@@ -1,20 +1,21 @@
 
 #card_producto{
-    background-color: rgba(252, 251, 251, 0.692);
+    background-color: rgba(74, 74, 74, 0);
+   
 }
 
-.contenedor{
-    width: 25%;
-    padding: 1.5rem;
-    margin: 2rem;
-    border-radius:6px;
-    border: solid 2px rgba(250, 249, 249, 0.921);
-    background-color: rgba(215, 215, 215, 0.57);
 
+
+#titulo_card{
+    font-size: 0.9rem;
+    color: rgb(147, 147, 147);
+    letter-spacing: 2px;
 }
 
-.titulo_card{
+.precio{
+    font-size: 0.8rem;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .descripcion_producto{
@@ -27,10 +28,23 @@
 
 .ver_detalle{
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(140, 140, 140);
     font-weight: bolder;
+    font-size: 0.7rem;
 }
 
 .ver_detalle:hover{
-    color: rgb(68, 68, 68);
+    color: rgb(185, 185, 185);
+}
+
+#imagen {
+    position: relative;
+}
+
+.t{
+    position: absolute;
+    top: 15.5rem;
+    left: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.689);
+    color: rgb(0, 0, 0);
 }

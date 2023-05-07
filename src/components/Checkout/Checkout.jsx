@@ -6,6 +6,7 @@ import { getFirestore } from '../../firebase/config'
 import 'firebase/firestore'
 import { Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import './checkout.css'
 
 
 
@@ -90,31 +91,38 @@ export const Checkout = () => {
     return (
 
 
-    <div className='bg-secondary'>
-        <h3>Terminar compra</h3>
+    <div className=' compra'>
+        <h3 className='mb-5 pb-3'>Terminar compra</h3>
 
-        <Row className='d-flex justify-content-center'>
+        <Row className='d-flex justify-content-center '>
             <Col md={5}>
             <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="nombre">Nombre</label>
-                        <input type="text" className="form-control" onChange={(e)=> setNombre(e.target.value)} value={nombre} />
+                <div className="form-group py-4">
+                    <label htmlFor="nombre"></label>
+                        <input type="text" className="form-control" placeholder="Nombre" required onChange={(e)=> setNombre(e.target.value)} value={nombre} />
+                       
                 </div>
-                <div className="form-group" >
-                    <label htmlFor="apellido">Apellido</label>
-                        <input type="text" className="form-control" onChange={(e)=> setApellido(e.target.value)} value={apellido}  />
+                <div className="form-group py-4" >
+                    <label htmlFor="apellido"></label>
+                        <input type="text" className="form-control" placeholder="Apellido" required onChange={(e)=> setApellido(e.target.value)} value={apellido}  />
                 </div>
-                <div className="form-group" >
-                    <label htmlFor="email">Email</label>
-                        <input type="text" className="form-control" onChange={(e)=> setEmail(e.target.value)} value={email}  />
+                <div className="form-group py-4" >
+                    <label htmlFor="email"></label>
+                        <input type="email" className="form-control" placeholder="Email" required onChange={(e)=> setEmail(e.target.value)} value={email}  />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="telefono">Telfono</label>
-                        <input type="text" className="form-control" onChange={(e)=> setTelefono(e.target.value)} value={telefono} />
+                <div className="form-group py-4">
+                    <label htmlFor="telefono"></label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Ingresa tu teléfono" pattern="[0-9]{10}" required onChange={(e)=> setTelefono(e.target.value)} value={telefono}></input>
+
+                        <small class="form-text text-muted">Ingresa un número de teléfono de 10 dígitos</small>
                 </div>
 
-                <button type='text'className='btn btn-success'>Finalizar</button>
-                <Link to ='/cart'className='btn btn-dark'>Volver al carrito</Link>
+
+                <div className=' row'>
+                     <button type='text col-1'className='botones' type="submit"  >Finalizar</button>
+                     <Link to ='/cart'className='botones text-decoration-none col-12 mt-4'>Volver al carrito</Link>
+                </div>
+               
             </form>
             </Col>
         </Row>

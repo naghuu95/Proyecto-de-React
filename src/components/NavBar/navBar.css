@@ -1,36 +1,67 @@
-
+#fixed{
+    z-index: 200;
+    /*position: fixed;*/
+    /*top: 0;*/
+    
+    width: 100%;
+    background-color: black;
+}
 .barra{
     background-color: rgb(60, 42, 33);
-    display: flex;
-    justify-content: center;
     
 }
-.navbar{
-    color: rgb(139, 138, 138);
+
+#basic-nav-dropdown{
+    color: rgb(165, 165, 165);
+    font-size: 0.8rem;
+    background-color: black;
+    
     
 }
+
+#basic-nav-dropdown:hover{
+    color: rgb(255, 255, 255);
+}
+
+
+
+.categorias{
+    background-color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    
+}
+
+.categorias:hover{
+    background-color: rgb(147, 147, 147);
+}
+
+
 
 .link-logo{
     text-decoration: none;
 }
 
 .logo{
-    font-size: 2rem;
+    font-size: 1.7rem;
     /*width: 20rem;*/
     font-weight: bold;
-    color:rgb(0, 0, 0);
-    letter-spacing: 50px;
+    color: aliceblue;
+    letter-spacing: 3rem;
 }
 
 .my-link{
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     text-decoration: none ;
-    color: rgb(213, 206, 163);
+    color: rgb(165, 165, 165);
     letter-spacing: 2px;
+    
 }
 
 .my-link:hover{
     color: rgb(255, 255, 255);
     font-weight: bold;
    
+}
+.link{
+    text-decoration: none ;
 }

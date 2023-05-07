@@ -3,6 +3,7 @@ import { Button, Col, Row } from 'react-bootstrap'
 import './Cart.css'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
+import { ItemCount } from '../ItemCount/ItemCount'
 
 
 
@@ -17,8 +18,12 @@ export const Cart = () => {
         carrito.length === 0 
         ?
         <>
-        <h3>Carrito vacio</h3>
-        <Link to='/'><Button>Volver a comprar</Button></Link> 
+
+        <div className='carrito_vacio'>
+         <h3>Carrito vacio</h3>
+         <Link to='/'><button className='botones mt-5 '>Volver a comprar</button></Link> 
+        </div>
+       
         </>
         :
         <>
@@ -27,7 +32,10 @@ export const Cart = () => {
             
             <Col md={2}>Producto</Col>
             <Col md={2}>Cantidad</Col>
+            <Col md={2}>Talle</Col>
             <Col md={2}>Precio</Col>
+            
+            
            </Row>
          {
            carrito.map((prod)=>(
@@ -48,13 +56,17 @@ export const Cart = () => {
             </Col>
 
             <Col md={2}>
+              {prod.talle}
+            </Col>
+
+            <Col md={2}>
              $ {prod.precio}
             </Col>
 
             <Col md={2}>
-             <Button onClick={()=> removerItem(prod.id)}>
+             <button className='botones' onClick={()=> removerItem(prod.id)}>
                 Eliminar
-             </Button>
+             </button>
             </Col>
 
            </Row>
@@ -63,11 +75,11 @@ export const Cart = () => {
       }
 
 
-        <Row className='fila my-5 py-2 d-flex justify-content-around bg-dark'>
-            <Col md={4} className='fs-4 precio-total'>Precio total </Col>
-            <Col md={3} className='fs-4 precio-total'>$ {precioTotal()}</Col>
-            <Col md={2}> <Button onClick={vaciarCarrito}>Vaciar Carrito</Button></Col>
-            <Col md={2}> <Link to='/checkout' className='btn btn-secondary'>Terminar compra </Link> </Col>
+        <Row className='fila my-5 py-5 d-flex justify-content-center align-items-center '>
+            <Col md={3} className='bg-dar precio-total'>Precio total  </Col>
+            <Col md={3} className='bg-primar precio-total'>$ {precioTotal()}</Col>
+            <Col md={3} className='bg-succes'><button className='botones' onClick={vaciarCarrito}>Vaciar Carrito</button></Col>
+            <Link to='/checkout' > <button className='botones mt-5'> Terminar compra  </button>   </Link>
         </Row>
         </>
       }

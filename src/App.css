@@ -7,12 +7,21 @@
   src: local('Queen'), url(./fuentes/QueensidesLight-ZVj3l.ttf) format('truetype');
   font-family: 'Praysire';
   src: local('Praysire'), url(./fuentes/Praysire-Demo.otf) format('opentype');
+  font-family: 'LEMON-l';
+  src: local('LEMON-l'), url(./fuentes/LEMONMILK-Light.otf) format('opentype');
 }
 .App {
   text-align: center;
   background-color: rgb(26, 18, 11);
-  font-family: 'Praysire', sans-serif;
+  font-family: 'LEMON-l', sans-serif;
+  font-weight: 100;
+  font-size: 0.8rem;
+  color: #ffffff;
+  overflow: hidden;
+  letter-spacing: 3px;
+  
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -26,14 +35,14 @@
 }
 
 .App-header {
-  background-color: #ff3700;
+  background-color: #b0b0b0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(131, 0, 0);
+  color: rgb(218, 218, 218);
 }
 
 .App-link {
@@ -48,3 +57,35 @@
     transform: rotate(360deg);
   }
 }
+
+h1{
+
+}
+
+h2{
+  letter-spacing:0.8rem ;
+
+}
+
+.botones{
+  background-color: rgba(88, 88, 88, 0);
+  border: 3px solid rgb(166, 166, 166);
+  border-radius: 8px;
+  color: #ebebeb;
+  font-size: 0.7rem;
+  padding: 7px 20px;
+  letter-spacing: 3.5px;
+
+
+
+}
+
+.botones:hover{
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.715);
+  color: #000000df;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.625);
+
+  
+}
+
