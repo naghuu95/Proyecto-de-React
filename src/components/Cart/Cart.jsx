@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Button, Col, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import './Cart.css'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
@@ -11,7 +11,7 @@ export const Cart = () => {
    
     const {carrito,precioTotal,removerItem,vaciarCarrito}= useContext(CartContext)
 
-  return (
+   return (
     <div className='container d-flex flex-column aling-item-center justify-content-center'>
 
       {
@@ -27,7 +27,7 @@ export const Cart = () => {
         </>
         :
         <>
-           <h1 className='fila py-5'>Resumen de compra</h1>
+           <h1 className='fila py-5'>Carrito de compras</h1>
            <Row className=' container d-flex fila justify-content-center bg-dark py-2'>
             
             <Col md={2}>Producto</Col>
@@ -70,9 +70,10 @@ export const Cart = () => {
             </Col>
 
            </Row>
+           
         </>
         ))
-      }
+       }
 
 
         <Row className='fila my-5 py-5 d-flex justify-content-center align-items-center '>
@@ -88,6 +89,8 @@ export const Cart = () => {
 
 
     </div>
+
+    
        
   )
 }

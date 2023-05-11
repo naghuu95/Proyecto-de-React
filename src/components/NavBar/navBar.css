@@ -4,7 +4,7 @@
     /*top: 0;*/
     
     width: 100%;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 .barra{
     background-color: rgb(60, 42, 33);
@@ -65,3 +65,61 @@
 .link{
     text-decoration: none ;
 }
+
+
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 480px) {
+    
+   
+
+    .hamburguesa{
+        font-size: 0.9rem !important;
+        border:none !important;
+    }
+
+    .hamburguesa:focus{
+        box-shadow: none !important;
+    }
+
+   
+    
+    
+    #basic-nav-dropdown{
+        color: rgb(165, 165, 165)!important;
+        font-size: 0.6rem;
+        background-color: rgba(0, 0, 0, 0);
+        
+        
+    }
+    
+    
+    .categorias{
+        text-align: center !important;
+        font-size: 0.6rem;
+        
+        
+    }
+
+
+    
+    .logo{
+        font-size: 5vw;
+        letter-spacing: 10vw;
+    }
+    
+    .my-link{
+        font-size: 0.6rem;
+        color: rgb(165, 165, 165);
+        letter-spacing: 2px;
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+  }

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 
-export const Item = ({id,nombre,precio,imagen,stock})=>{
+export const Item = ({id,nombre,precio,imagen})=>{
 
   //cree un estado para que aparescan los talles en la imagen del producto
    // handleMouseHover va a mostrar los el grupo de botones de talles cuando pase el mouse sobre la imagen  y

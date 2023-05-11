@@ -6,38 +6,47 @@ import {Navbar,Nav,Container,NavDropdown} from "react-bootstrap"
 
 const NavBar =()=>{
     return(
-      
 
-    <Navbar  className="container-fluid  d-flex justify-content-center " id="fixed" expand="lg">
+
+
+
+      <Navbar  variant="dark" className="container-fluid  d-flex justify-content-around  " id="fixed" expand="lg">
       
-      <div className="  container-fluid row ">
-        <Navbar.Brand href="#home " className="col-4 navbar">
-        <Link to='/' className="link-logo    ">
+      
+          <Navbar.Brand href="#home " className=" col-sm-1 col-md-3 navbar ">
+          <Link to='/' className="link-logo    ">
          
-            <h2 className="logo ps-5 "> FLUX</h2>
-        </Link>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav " />
+            <h2 className="logo ps-3 ps-md-5 "> FLUX</h2>
+          </Link>
+          </Navbar.Brand>
+          <Link className="link d-block d-md-none col-1 " to='/cart'><CartWidget /> </Link>
 
-        <Navbar.Collapse id="basic-navbar-nav  ">
+          <Navbar.Toggle aria-controls="basic-navbar-nav " className=" hamburguesa" />
 
-          <Nav className="  col-7 d-flex justify-content-evenly align-items-center " >
-           <NavLink to ={'/'} className={({isActive})=>isActive? 'ActiveOption my-link' : 'Option my-link'}>Inicio</NavLink>
+        <Navbar.Collapse id="basic-navbar-nav" className="  ">
+
+          <Nav className="  col-12 col-md-11  d-flex justify-content-evenly align-items-center py-3 py-md-0 "  >
+           <NavLink to ={'/'} className={({isActive})=>isActive? 'ActiveOption my-link ' : 'Option my-link'}>Inicio</NavLink>
              <NavDropdown title="Categorias"  id="basic-nav-dropdown">
-             <Link to={'/categoria/remeras'}class="text-decoration-none"> <NavDropdown.Item className="categorias" href="#action/3.1">Remeras</NavDropdown.Item></Link>
+             <Link to={'/categoria/remeras'}class="text-decoration-none "> <NavDropdown.Item className="categorias " href="#action/3.1">Remeras</NavDropdown.Item></Link>
              <Link to={'/categoria/musculosas'}class="text-decoration-none" ><NavDropdown.Item className="categorias" href="#action/3.2">Musculosas</NavDropdown.Item></Link>
              <Link to={'/categoria/shorts'}class="text-decoration-none" > <NavDropdown.Item className="categorias" href="#action/3.3">Shorts</NavDropdown.Item> </Link>
             </NavDropdown>
             <NavLink to ={'/nosotros'} className={({isActive})=>isActive? 'ActiveOption my-link' : 'Option my-link'}>Nosotros</NavLink>
           </Nav>
 
-          <Link className="link  col-1 " to='/cart'><CartWidget /> </Link>
+          <Link className="link d-none d-md-block  col-1 " to='/cart'><CartWidget /> </Link>
         </Navbar.Collapse>
        
-      </div>
       
-    </Navbar>
+      
+      </Navbar>
 
+
+
+      
+
+    
 
 
 /*<li class="nav-item dropdown">

@@ -5,8 +5,10 @@ import firebase from 'firebase'
 import { getFirestore } from '../../firebase/config'
 import 'firebase/firestore'
 import { Col, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
+import 'sweetalert2/dist/sweetalert2.min.css';
 import './checkout.css'
+import {useForm} from 'react-hook-form'
 
 
 
@@ -16,59 +18,93 @@ export const Checkout = () => {
 
     const {carrito,precioTotal,vaciarCarrito}=useContext(CartContext)
 
-    const [nombre,setNombre]=useState("")
+    const{ register, handleSubmit,trigger,reset,formState:{errors}}=useForm()
+    const navigate= useNavigate();
 
-    const [apellido,setApellido]=useState("")
+   // validar los campos de un formulario cuando el usuario realiza una acción de "blur" o abandono del campo de entrada.
+    const handleInputBlur = async (e) => {
+        await trigger(e.target.name);
+      }
+      
+   
+    
+    const onSubmit=(data)=>{
 
-    const [email,setEmail]= useState("")
-
-    const [telefono,setTelefono]=useState(Number)
-
-    const handleSubmit =(e)=>{
+        console.log(data)
+        const { nombre, apellido, email, telefono } = data
         
-        e.preventDefault()
-        console.log("Nombre:",nombre)
-        console.log("Apellido:",apellido)
-        console.log("Email:", email)
-        console.log("Telefono:",telefono)
-
-        const orden= {
+        const orden={
             buyer:{
                 nombre,
                 apellido,
                 email,
-                telefono
+                telefono: parseInt(telefono),
             },
             item:carrito,
-            total_precio: precioTotal(),
+            total_precio:precioTotal(),
             data:firebase.firestore.Timestamp.fromDate(new Date())
         }
-        console.log(orden)
-
-
- //Hacemos funcion para enciar la orden a firebase
 
         const db=getFirestore()
 
         const ordenes = db.collection('ordenes')
-    
+
         ordenes.add(orden)
                .then ((res)=>{
+
+                   
+
+
                 Swal.fire({
+                  icon: 'success',
+                  title: 'Perfecto',
+                  text: `Su compra a sido realizada con exito, guarde su numero de compra: ${res.id}, ¿DESEA SEGUIR COMPRANDO? `,
+                  showCancelButton: true,
+                  confirmButtonText: 'SI',
+                  cancelButtonText: 'NO',
+                  customClass: {
+                    confirmButton: 'my-confirm-button-class',
+                    cancelButton: 'my-cancel-button-class',
+                  },
+                  buttonsStyling: false,
+
+                  willClose: () => {
+                    vaciarCarrito()
+                    
+                  }
+            
+            
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    navigate('/productos');
+                  } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    navigate('/');
+                  }
+                });
+
+
+
+                /*Swal.fire({
                     icon: 'success',
                     title: 'Perfecto',
                     text: `Su compra a sido realizada con exito, guarde su numero de compra: ${res.id}`,
-                    footer: '<a href="">Seguir comprando</a>',
+                    allowOutsideClick: true,
+                    showConfirmButton: false,
+                    
+                    footer: '<a href="../../Home">Seguir comprando</a>',
+                    
                     willClose: () => {
                         vaciarCarrito()
+                        
                       }
-                  })
+                  })*/
+
+
+
                })
                .finally(()=>{
                 console.log ('operacion terminada con exito')
                })
-
-               //actualizamos la cantidad en la base de datos
 
                carrito.forEach((item)=>{
                 const docRef=db.collection('productos').doc(item.id)
@@ -82,51 +118,150 @@ export const Checkout = () => {
                       })
                })
 
+        reset();
+
     }
 
    
-    
-
   
     return (
 
 
-    <div className=' compra'>
-        <h3 className='mb-5 pb-3'>Terminar compra</h3>
+      <Row className='container-fluid d-flex justify-content-center '>
 
-        <Row className='d-flex justify-content-center '>
-            <Col md={5}>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group py-4">
-                    <label htmlFor="nombre"></label>
-                        <input type="text" className="form-control" placeholder="Nombre" required onChange={(e)=> setNombre(e.target.value)} value={nombre} />
-                       
-                </div>
-                <div className="form-group py-4" >
-                    <label htmlFor="apellido"></label>
-                        <input type="text" className="form-control" placeholder="Apellido" required onChange={(e)=> setApellido(e.target.value)} value={apellido}  />
-                </div>
-                <div className="form-group py-4" >
-                    <label htmlFor="email"></label>
-                        <input type="email" className="form-control" placeholder="Email" required onChange={(e)=> setEmail(e.target.value)} value={email}  />
-                </div>
-                <div className="form-group py-4">
-                    <label htmlFor="telefono"></label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Ingresa tu teléfono" pattern="[0-9]{10}" required onChange={(e)=> setTelefono(e.target.value)} value={telefono}></input>
+        <h3 className='py-3 mt-4'>Resumen de la compra</h3>
 
-                        <small class="form-text text-muted">Ingresa un número de teléfono de 10 dígitos</small>
-                </div>
+       <Col md={5} className=' border border-secondary rounded border-2  my-5 mt-5 d-flex flex-column justify-content-around '>
 
+        {
+           carrito.map((prod)=>(
+           <>
+           <Row className=' fila d-flex justify-content-center align-items-center '>
 
-                <div className=' row'>
-                     <button type='text col-1'className='botones' type="submit"  >Finalizar</button>
-                     <Link to ='/cart'className='botones text-decoration-none col-12 mt-4'>Volver al carrito</Link>
-                </div>
-               
-            </form>
+            <Col md={2} >
+            <img width={50} src={prod.imagen} alt={prod.nombre} />
+            
             </Col>
-        </Row>
 
-    </div>
-  )
-}
+            <Col md={2}>
+             {prod.nombre}
+            </Col>
+
+            <Col md={2}>
+            {prod.cantidad} unidades
+            </Col>
+
+            <Col md={2}>
+              {prod.talle}
+            </Col>
+
+            <Col md={2}>
+             $ {prod.precio}
+            </Col>
+               
+
+            
+           </Row>
+
+
+           
+        </>
+        ))
+       }
+
+        <Row className=' bg-dark container mx-1'>
+         <Col md={8} className='precio-total'>Total de la compra  </Col>
+         <Col md={4} className=' precio-total'>$ {precioTotal()}</Col>
+        </Row>
+            
+
+
+       </Col>
+
+
+
+        <Col md={6} className='py-5 my-5'>
+         
+         
+         <div className=' compra d-flex flex-column justify-content-center align-items-center '>
+          
+        
+         
+         <form onSubmit={handleSubmit(onSubmit)} className='formulario'>
+           <div className='campos'>
+             <label htmlFor=""> Nombre</label>
+             <input type="text" onBlur={handleInputBlur}  {...register('nombre',{
+                    required:true,
+                    maxLength: 25,
+                    minLength: 3,
+         
+             })}  />
+              
+              {errors.nombre?.type=== 'required'&& <p className='error'>El campo nombre es requerido</p>}
+              {errors.nombre?.type=== 'maxLength'&& <p className='error'>El numero de caracteres debe estar entre 3 y 25 digitos</p>}
+              {errors.nombre?.type=== 'minLength'&& <p className='error'>El numero de caracteres debe estar entre 3 y 25 digitos</p>}
+           </div>
+         
+           <div className='campos'>
+             <label htmlFor="">Apellido</label>
+             <input type="text" onBlur={handleInputBlur} {...register('apellido',{
+                    required:true,
+                    maxLength: 25,
+                    minLength: 3,
+         
+             })}/>
+         
+              {errors.apellido?.type=== 'required'&& <p className='error'>El campo apellido es requerido</p>}
+              {errors.apellido?.type=== 'maxLength'&& <p className='error'>El numero de caracteres debe estar entre 3 y 25 digitos</p>}
+              {errors.apellido?.type=== 'minLength'&& <p className='error'>El numero de caracteres debe estar entre 3 y 25 digitos</p>}
+           </div>
+         
+           <div className='campos'>
+             <label htmlFor="">Email</label>
+             <input type="text" onBlur={handleInputBlur} {...register('email',{
+                required:true,
+                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                
+         
+         
+             })} />
+         
+             {errors.email?.type=== 'required'&& <p className='error'>El campo email es requerido</p>}
+             {errors.email?.type=== 'pattern'&& <p className='error'>El formato del email es incorrecto </p>}
+         
+           </div>
+         
+           <div className='campos '>
+             <label htmlFor="">Telefono</label>
+             <input type="number" onBlur={handleInputBlur} {...register('telefono',{
+               required:true,
+               maxLength: 13,
+               minLength: 9,
+               
+               
+             })} />
+         
+             {errors.telefono?.type=== 'required'&& <p className='error'>El campo telefono es requerido</p>}
+             {errors.telefono?.type=== 'maxLength'&& <p className='error'>El numero debe estar entre 9 y 13 digitos</p>}
+             {errors.telefono?.type=== 'minLength'&& <p className='error'>El numero debe estar entre 9 y 13 digitos</p>}
+             
+           </div>
+         
+           <div className='row'>
+            <button type='submit' className='botones'/*onClick={() => reset()}*/ >Realizar compra</button>
+             <Link to='/cart' className='botones text-decoration-none col-12 mt-4'>Volver al carrito</Link>
+           </div>
+         
+          </form>
+         
+              </div>
+         
+        </Col>
+
+      </Row>  
+
+    )
+  
+} 
+
+

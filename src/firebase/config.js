@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
-
 import 'firebase/firestore'
+
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyD_0rFRtQ6W0eIgu6vP5KVxqEFmRXZWqo4",
@@ -17,3 +18,6 @@ const app = firebase.initializeApp(firebaseConfig)
 export const getFirestore =()=>{
     return firebase.firestore(app)
 }
+
+
+

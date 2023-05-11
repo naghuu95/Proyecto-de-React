@@ -1,4 +1,4 @@
-.compra{
+/*.compra{
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -6,4 +6,118 @@
 
 }
 
+
+.alerta{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(237, 124, 124, 0.873);
+    color: rgb(116, 4, 4);
+    font-weight: bold;
+    font-size: .6rem;
+}*/
+
+
+.formulario{
+    background-color: rgba(0, 0, 0, 0.489);
+    width: 40vw;
+    height: 80vh;
+    border-radius: 30px;
+    border: 2px solid blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.campos{
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4vh;
+}
+
+.campos label{
+    padding-bottom: 3px;
+}
+
+.campos input{
+   background-color: rgb(39, 38, 38);
+    color: rgb(177, 177, 177);
+    width: 25vw;
+    padding: 0.5rem;
+    border-radius: 7px;
+    border: 2px solid rgb(179, 179, 179);
+    
+
+}
+
+.error{
+    font-size: 0.6rem;
+    color: rgb(252, 0, 0);
+    font-weight: bold;
+    padding-top: 3px;
+    
+}
+
+
+.swal2-popup {
+    background-color: rgb(0, 0, 0);
+    color: rgb(162, 186, 161);
+    border: 2px rgb(103, 103, 103) solid;
+    box-shadow: 0px 0px 10px rgb(90, 92, 90);
+    border-radius: 1.2rem;
+  }
+  
+  .swal2-title, .swal2-content {
+    color: rgb(129, 194, 91);
+    text-shadow: 0px 0px 8px rgb(122, 176, 83);
+  }
+
+  .my-confirm-button-class {
+    
+    background-color: #727272;
+    color: #000000;
+    border: 3px solid rgb(4, 4, 4);
+    border-radius: 8px;
+    padding: 2px 50px;
+    margin-right: 8px;
+    font-size: 1rem;
+  }
+  
+  .my-cancel-button-class {
+    background-color: #727272;
+    color: #000000;
+    border: 3px solid rgb(4, 4, 4);
+    border-radius: 8px;
+    padding: 2px 50px;
+    margin-right: 8px;
+    font-size: 1rem;
+  }
+
+
+
+
+
+  .my-confirm-button-class:hover {
+    
+    background-color: #53a533;
+    color: #ffffff;
+    border: 3px solid rgb(0, 255, 26);
+    border-radius: 8px;
+    box-shadow:0px 0px 20px #53933e;
+    padding: 2px 50px;
+    margin-right: 8px;
+    font-size: 1rem;
+  }
+  
+  .my-cancel-button-class:hover {
+    background-color: #bb2020;
+    color: #ffffff;
+    border: 3px solid rgb(106, 2, 2);
+    box-shadow:0px 0px 20px #ba4242;
+    border-radius: 8px;
+    padding: 2px 50px;
+    margin-right: 8px;
+    font-size: 1rem;
+  }
 

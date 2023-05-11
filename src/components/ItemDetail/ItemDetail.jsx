@@ -93,6 +93,7 @@ export const ItemDetail = ({id,nombre,precio,imagen,stock,descripcion,categoria}
         </Card.Body>
         <footer>
           <p>Unidades </p>
+          
         <ItemCount max={stock} modify={setCantidad} counter={cantidad}/>
         
         

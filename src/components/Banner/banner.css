@@ -32,3 +32,58 @@
     color: rgb(196, 195, 195);
     letter-spacing: 2px;
 }
+
+
+@media screen and (max-width: 480px) {
+    
+    .hero{
+    
+        height: 4rem;
+        
+    }
+    .video{
+        display:none;
+        
+        
+    }
+    
+    .info{
+        height:70vw;
+        background-color: rgb(43, 43, 43);
+        font-size: 4vw;
+       bottom:0rem;
+       top: 0%;
+    }
+    
+    .info_caja{
+        display: flex;
+        flex-direction: column;
+        
+        
+        padding-top:0rem;
+    }
+    
+    .titulo{
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        font-size: 3.5vw;
+        letter-spacing: 2px;
+        line-height: 2;
+        color: rgb(255, 255, 255);
+        
+    }
+    
+    .texto{
+        color: rgb(196, 195, 195);
+        letter-spacing: 2px;
+    }
+
+    .boton_inicio{
+        font-size: 3.5vw;
+        padding: 2.5vw 2.5vw;
+    }
+    
+
+
+
+  }

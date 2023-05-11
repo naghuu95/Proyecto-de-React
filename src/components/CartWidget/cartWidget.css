@@ -7,6 +7,21 @@
     color:rgb(255, 255, 255)
 }
 
-span{
-    color:rgb(255, 255, 255)
-}
+
+
+@media screen and (max-width: 480px) {
+   
+    
+    
+    .carrito{
+        width: 7vw;
+        color:rgb(165, 165, 165);
+    }
+    
+    .circulo{
+        font-size: 7px !important;
+       
+    }
+
+
+  }
