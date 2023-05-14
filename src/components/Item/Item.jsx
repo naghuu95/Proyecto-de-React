@@ -33,7 +33,7 @@ export const Item = ({id,nombre,precio,imagen})=>{
 
     
     return(
-        <div className='col-3 d-flex justify-content-center my-5 py-4 '>
+        <div className=' col-10 col-sm-7 col-md-3 d-flex justify-content-center my-5 py-4 '>
        <Card style={{ width: '17rem' }} className='col-5 card_producto ' >
         
        <div onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
