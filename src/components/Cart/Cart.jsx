@@ -11,6 +11,8 @@ export const Cart = () => {
    
     const {carrito,precioTotal,removerItem,vaciarCarrito}= useContext(CartContext)
 
+   
+
    return (
     <div className='container d-flex flex-column aling-item-center justify-content-center'>
 
@@ -31,9 +33,11 @@ export const Cart = () => {
            <Row className=' container d-flex fila justify-content-center bg-dark py-2'>
             
             <Col md={2}>Producto</Col>
-            <Col md={2}>Cantidad</Col>
             <Col md={2}>Talle</Col>
-            <Col md={2}>Precio</Col>
+            <Col md={2}>Cantidad</Col>
+            <Col md={2}>Precio Unitario</Col>
+            
+            
             
             
            </Row>
@@ -51,21 +55,23 @@ export const Cart = () => {
              {prod.nombre}
             </Col>
 
-            <Col md={2}>
-            {prod.cantidad} unidades
-            </Col>
-
+  
             <Col md={2}>
               {prod.talle}
             </Col>
+
+            <Col md={2}>
+            {prod.cantidad} unidades   x
+            </Col>
+
 
             <Col md={2}>
              $ {prod.precio}
             </Col>
 
             <Col md={2}>
-             <button className='botones' onClick={()=> removerItem(prod.id)}>
-                Eliminar
+             <button className='botones' onClick={()=> removerItem(prod)}>
+                Eliminar                
              </button>
             </Col>
 
@@ -82,6 +88,9 @@ export const Cart = () => {
             <Col md={3} className='bg-succes'><button className='botones' onClick={vaciarCarrito}>Vaciar Carrito</button></Col>
             <Link to='/checkout' > <button className='botones mt-5'> Terminar compra  </button>   </Link>
         </Row>
+
+
+       
         </>
       }
     

@@ -15,16 +15,16 @@ export const Nosotros = () => {
 
       <Col md={4}>
 
-     
+     <img src="./assets/123jpg" alt="" />
 
       </Col>
 
       <Col md={6} className='columna  d-flex flex-column align-items-center bg-dark justify-content-between'>
-        <h2 className='pb-5'>Nosotros</h2>
+        <h2 className='py-5'>Nosotros</h2>
 
-        <p className='pb-2'> Hola! Con gusto te ayudaré a crear una sección "Nosotros" para tu sitio web de ropa deportiva Flux. Aquí te dejo un ejemplo de cómo podrías redactarla:
+        <p className='pb-5'> 
 
-            Nosotros en Flux somos una marca de ropa deportiva que se enfoca en la comodidad, la calidad y el estilo. Nos apasiona el deporte y creemos que la ropa que usas debe permitirte moverte con facilidad mientras te ves y te sientes genial.
+        En Flux somos una marca de ropa deportiva que se enfoca en la comodidad, la calidad y el estilo. Nos apasiona el deporte y creemos que la ropa que usas debe permitirte moverte con facilidad mientras te ves y te sientes genial.
 
             Nos enorgullece decir que nuestras prendas son fabricadas con materiales de alta calidad y están diseñadas para durar. Además, todas nuestras prendas son cuidadosamente elaboradas con detalles de moda y colores vibrantes para que puedas expresar tu personalidad y estilo en el gimnasio o en la calle.
 

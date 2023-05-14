@@ -37,19 +37,26 @@
 
 
 .talle{
-    color: rgb(0, 0, 0);
-    background-color: rgb(79, 79, 79);
+    color: rgb(0, 0, 0) !important;
+    background-color: rgb(255, 255, 255)!important;
     width: 100px;
     height: 50px;
-    border-radius: 3px;
-    border: 3px solid rgb(153, 153, 153);
+    border-radius: 0px !important;
+    border: 1px solid rgb(0, 0, 0)!important;
+    transition: background-color 0.3s ease !important;
 }
 
 .talle:hover{
-    color:rgb(0, 0, 0);
-    border-color: blueviolet;
-    background-color: rgb(151, 58, 114);
+    color:rgb(255, 255, 255)!important;
+    border-color: rgb(0, 0, 0) !important;
+    background-color: rgb(0, 0, 0)!important;
 }
+
+
+ .talle.active{
+    background-color: #000000!important;
+    color:white!important;
+  }
 
 Link{
     text-decoration: none;
@@ -60,3 +67,40 @@ Link{
     background-color: rgba(72, 72, 72, 0.685);
     color: aliceblue;
 }
+
+.accordion{
+    color: #000000!important;
+    
+    border: none !important;
+}
+
+.accordion-button{
+    font-weight: bold;
+    background-color: #dd000000!important;
+    color: aliceblue!important;
+    box-shadow: none !important;
+    border-bottom: 0.5px solid #fff !important;
+    
+}
+
+.accordion-icon:active{
+       color: #dd0000!important;
+}
+.accordion-button:active{
+    border: none !important;
+    background-color: #dd000000!important;
+    color: aliceblue!important;
+    box-shadow: none !important;
+}
+
+.my-acordion{
+    background-color: rgba(255, 255, 255, 0) !important;
+    color: rgb(255, 255, 255) !important;
+    border: none !important;
+}
+
+.my-acordion-header{
+    background-color: #ffffff00 !important;
+   
+}
+

@@ -5,24 +5,37 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 8rem;
-      background-color: rgba(125, 59, 59, 0);
+      background-color: rgba(94, 70, 70, 0);
 }
 
 .Controles{
-      width:10%;
+      width:2%;
       display: flex;
       justify-content: space-evenly;
-      padding-bottom: 2px;
-      background-color: rgba(0, 0, 0, 0);
+      align-items: center;
+      
 }
 
 
-.Boton{
-   
-     font-size: 1.5rem;
-     box-shadow: 4px 4px 6px black;
-     background-color: rgb(223, 23, 90);
+.boton{
+      
+     font-size: 2rem ;
+     color: rgb(255, 255, 255)!important;
      border-radius: 3px;
-     border: 3px solid rgb(244, 158, 0);
+     border: none !important;
 }
+
+.boton:hover{
+      background-color: rgba(240, 248, 255, 0) !important;
+      font-size: 0.7rem;
+      color: rgb(0, 0, 0)!important;
+      border-radius: 3px;
+      border: none !important;
+ }
+ 
+ 
+ 
+ 
+
+
+

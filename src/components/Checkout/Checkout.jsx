@@ -18,6 +18,13 @@ export const Checkout = () => {
 
     const {carrito,precioTotal,vaciarCarrito}=useContext(CartContext)
 
+    const costoEnvio = precioTotal() >= 15000 ? 0 : 1800;
+    
+
+    const totalResumen = () => {
+      return precioTotal() + costoEnvio ;
+    };
+
     const{ register, handleSubmit,trigger,reset,formState:{errors}}=useForm()
     const navigate= useNavigate();
 
@@ -41,7 +48,9 @@ export const Checkout = () => {
                 telefono: parseInt(telefono),
             },
             item:carrito,
-            total_precio:precioTotal(),
+            total_precio_productos:precioTotal(),
+            costo_envio:costoEnvio,
+            precio_total_de_la_compra : totalResumen(),
             data:firebase.firestore.Timestamp.fromDate(new Date())
         }
 
@@ -131,7 +140,7 @@ export const Checkout = () => {
 
         <h3 className='py-3 mt-4'>Resumen de la compra</h3>
 
-       <Col md={5} className=' border border-secondary rounded border-2  my-5 mt-5 d-flex flex-column justify-content-around '>
+       <Col md={6} className=' border border-secondary rounded border-2  my-5 mt-5 d-flex flex-column justify-content-around '>
 
         {
            carrito.map((prod)=>(
@@ -168,11 +177,26 @@ export const Checkout = () => {
         </>
         ))
        }
-
-        <Row className=' bg-dark container mx-1'>
+         
+        <Row className='bg-dark container mx-1 '>
          <Col md={8} className='precio-total'>Total de la compra  </Col>
          <Col md={4} className=' precio-total'>$ {precioTotal()}</Col>
         </Row>
+
+
+       <Row className='bg-dark container mx-1'>
+         <Col md={8}>Costo de envío:</Col>
+         <Col md={4}>$ {costoEnvio}</Col>
+       </Row>
+       
+
+       <Row className=' bg-dark container mx-1'>
+         <Col md={8} className='precio-total'>Total final de la compra </Col>
+         <Col md={4} className=' precio-total'>$ {totalResumen()}</Col>
+        </Row>
+
+       
+            
             
 
 
@@ -180,7 +204,7 @@ export const Checkout = () => {
 
 
 
-        <Col md={6} className='py-5 my-5'>
+        <Col md={5} className='py-5 my-5'>
          
          
          <div className=' compra d-flex flex-column justify-content-center align-items-center '>

@@ -2,8 +2,10 @@ import './Item.css'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-
+import { useState,useContext } from 'react';
+import { CartContext } from '../context/CartContext';
+import { Toaster,toast } from 'react-hot-toast';
+import {MdOutlineAddCircleOutline} from 'react-icons/md'
 
 export const Item = ({id,nombre,precio,imagen})=>{
 
@@ -20,21 +22,33 @@ export const Item = ({id,nombre,precio,imagen})=>{
     setShowTalles(false);
   };
 
+  const {addToCart}= useContext(CartContext)
+
+  const handleAddToCart = (talle) => {
+    addToCart({id, nombre, precio, imagen, talle, cantidad: 1});
+    toast.success('Se agregó al carrito')
+    
+  };
+
 
     
     return(
-        <div className='col-3 d-flex justify-content-center my-5 py-4'>
-       <Card style={{ width: '15rem' }} className='col-5 ' id='card_producto'>
+        <div className='col-3 d-flex justify-content-center my-5 py-4 '>
+       <Card style={{ width: '17rem' }} className='col-5 card_producto ' >
         
        <div onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave}>
-          <Card.Img variant="top" src={imagen} id='imagen' />
+        <Link to={`/item/${id}`}> <Card.Img variant="top" src={imagen} id='imagen' /></Link> 
           {showTalles && (
             <div className="t">
+              <p className=' w-75 d-flex justify-content-evenly'> <MdOutlineAddCircleOutline className='fs-5 '/> Agregar rapido</p>
+              <div>
+              <Button variant="outline-secondary" className='me-1 b-talles' onClick={() => handleAddToCart('S')}  >S</Button>
+              <Button variant="outline-secondary" className='me-1 b-talles'onClick={() => handleAddToCart('M')}>M</Button>
+              <Button variant="outline-secondary" className='me-1 b-talles'onClick={() => handleAddToCart('L')}>L</Button>
+              <Button variant="outline-secondary" className='me-1 b-talles'onClick={() => handleAddToCart('XL')}>XL</Button>
+
+              </div>
               
-              <Button variant="outline-secondary" className='me-1'>S</Button>
-              <Button variant="outline-secondary" className='me-1'>M</Button>
-              <Button variant="outline-secondary" className='me-1'>L</Button>
-              <Button variant="outline-secondary" className='me-1'>XL</Button>
             </div>
           )}
         </div>
@@ -52,7 +66,18 @@ export const Item = ({id,nombre,precio,imagen})=>{
             <Link className='ver_detalle' to={`/Item/${id}`} >Ver detalle </Link>
         </footer>
         </Card>
-
+        <Toaster 
+        position='top-center ' 
+        toastOptions={{
+          className: 'mensaje',
+          duration: 1500,
+         }}
+       
+          
+         
+  
+        
+        />
 
       </div>
        

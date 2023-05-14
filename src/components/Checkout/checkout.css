@@ -18,11 +18,12 @@
 
 
 .formulario{
-    background-color: rgba(0, 0, 0, 0.489);
+    /*background-color: rgba(0, 0, 0, 0.489);*/
     width: 40vw;
-    height: 80vh;
-    border-radius: 30px;
-    border: 2px solid blanchedalmond;
+    height: auto;
+    padding: 50px 0px;
+    /*border-radius: 30px;
+    border: 2px solid blanchedalmond;*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,14 +42,22 @@
 }
 
 .campos input{
-   background-color: rgb(39, 38, 38);
-    color: rgb(177, 177, 177);
+   background-color: #bb202000;
+    color: rgb(255, 255, 255);
     width: 25vw;
     padding: 0.5rem;
-    border-radius: 7px;
-    border: 2px solid rgb(179, 179, 179);
+
+    border: none;
+    border-bottom: 2px solid rgb(255, 255, 255);
     
 
+}
+
+.campos input:focus{
+  border: none;
+  background-color: #000000;
+  box-shadow: none;
+  border-radius: none;
 }
 
 .error{

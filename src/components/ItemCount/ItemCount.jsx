@@ -2,6 +2,7 @@ import './ItemCount.css'
 import { Button } from 'react-bootstrap'
 
 
+
  export const ItemCount= ({modify, max, counter})=>{
     
    
@@ -21,13 +22,13 @@ import { Button } from 'react-bootstrap'
      
 
      return (
-        <div className='Contador'>
-            <div className='Controles'>
-                <Button variant="outline-secondary"onClick={decrementar} >  -  </Button>
+        <div className='Contador '>
+            <div className='Controles '>
+                <Button variant="outline-secondary boton"onClick={decrementar} > - </Button>
                
-                <h4 className='px-3'>{counter}</h4>
+                <h4 className='mx-2 fs-5'>{counter}</h4>
 
-                <Button variant="outline-secondary"onClick={incrementar} >  +  </Button>
+                <Button variant="outline-secondary boton"onClick={incrementar} > +</Button>
             </div>
            
         </div>

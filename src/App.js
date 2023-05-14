@@ -10,8 +10,7 @@ import { Checkout } from './components/Checkout/Checkout';
 import { PiePagina } from './components/PiePagina/PiePagina';
 import { Nosotros } from './components/Nosotros/Nosotros';
 import Home from './components/Home/Home';
-import { Login } from './components/Sesion/Login';
-import { Register } from './components/Sesion/Register';
+
 
 
 function App() {
@@ -30,8 +29,7 @@ function App() {
          <Routes>
            
           <Route path="/" element={<Home />} />
-          <Route path='/login' element={<Login/>} />
-          <Route path='/register' element={<Register/>}/> 
+         
 
           <Route path='/productos' element={<ItemListContainer/>}/>
           <Route path='/nosotros' element={<Nosotros/>}/>

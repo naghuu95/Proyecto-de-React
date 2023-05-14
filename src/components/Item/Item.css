@@ -1,6 +1,7 @@
 
-#card_producto{
-    background-color: rgba(74, 74, 74, 0);
+.card_producto{
+    background-color: rgba(74, 74, 74, 0)!important;
+    border: none !important;
    
 }
 
@@ -42,9 +43,32 @@
 }
 
 .t{
+    height: 25%;
+    width: 100%;
     position: absolute;
-    top: 15.5rem;
-    left: 2.5rem;
-    background-color: rgba(255, 255, 255, 0.689);
+    top:12.9rem;
+    font-weight: bold;
+    background-color: rgba(183, 183, 183, 0.407);
+    backdrop-filter: blur(5px);
     color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.b-talles{
+    border: none !important;
+    border-radius: 2px !important;
+    margin-bottom: 15px ;
+    width: 50px;
+    background-color: rgb(244, 244, 244) !important;
+    color: black !important;
+    transition: all 0.4s ease !important ;
+}
+
+.b-talles:hover{
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(255, 255, 255) !important;
 }

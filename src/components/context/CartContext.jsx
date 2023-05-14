@@ -16,9 +16,34 @@ export const CartProvider =({children})=>{
 
     console.log(carrito);
     
-    const addToCart =(item)=>{
-      setCarrito([...carrito,item])
-    }
+
+    const addToCart = (newItem) => {
+      const existeItem = carrito.find(item => item.id === newItem.id && item.talle === newItem.talle);
+      if (existeItem) {
+        setCarrito(carrito.map(item => {
+          if (item.id === newItem.id && item.talle === newItem.talle) {
+            return { ...item, cantidad: item.cantidad + newItem.cantidad };
+          } else {
+            return item;
+          }
+        }));
+      } else {
+        setCarrito([...carrito, newItem]);
+      }
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+    /*-------------*/ 
     
     const calcularCantidad =()=>{
       return carrito.reduce((acc,prod)=> acc + prod.cantidad , 0)
@@ -27,11 +52,16 @@ export const CartProvider =({children})=>{
     const precioTotal =()=>{
       return carrito.reduce((acc,prod)=> acc + prod.precio*prod.cantidad,0)
     }
-    
+
+    const removerItem = (prod) => {
+      setCarrito(carrito.filter(item => !(item.id === prod.id && item.talle === prod.talle)));
+    };
+
+    /*
     const removerItem=(itemId)=>{
       const newCart = carrito.filter((prod)=>prod.id !== itemId)
       setCarrito(newCart)
-    }
+    }*/
     
     const vaciarCarrito=()=>{
       setCarrito([])
