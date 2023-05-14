@@ -140,7 +140,7 @@ export const Checkout = () => {
 
         <h3 className='py-3 mt-4'>Resumen de la compra</h3>
 
-       <Col md={6} className=' border border-secondary rounded border-2  my-5 mt-5 d-flex flex-column justify-content-around '>
+       <Col xs={10} md={6} className=' border border-secondary rounded border-2  my-5 mt-5 d-flex flex-column justify-content-around '>
 
         {
            carrito.map((prod)=>(
@@ -204,7 +204,7 @@ export const Checkout = () => {
 
 
 
-        <Col md={5} className='py-5 my-5'>
+        <Col xs={10} md={5} className='py-5 my-5'>
          
          
          <div className=' compra d-flex flex-column justify-content-center align-items-center '>

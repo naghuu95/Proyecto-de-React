@@ -64,7 +64,7 @@ export const ItemDetail = ({id,nombre,precio,imagen,imagen2,imagen3,stock,descri
 
           <div className=' py-5 bg-dark row d-flex justify-content-evenly'>
 
-            <Col md={5} className=' d-flex flex-column justify-content-center'> 
+            <Col xs={10} sm={10} md={5} className=' d-flex flex-column justify-content-center'> 
             <Row className=' d-flex justify-content-evenly'>
              <Col md={6} className=' p-2'> <img src={imagen2} alt={nombre}style={{ width: '100%', height: 'auto' }} /></Col>
              <Col md={6} className=' p-2'><img src={imagen3} alt={nombre} style={{ width: '100%', height: 'auto' }}/></Col>
@@ -83,7 +83,7 @@ export const ItemDetail = ({id,nombre,precio,imagen,imagen2,imagen3,stock,descri
 
 
 
-           <Col md={4} className=' py-5'>
+           <Col xs={10} sm={10} md={4} className=' py-5'>
            <Row className=''>
             <Col md={9} className=' text-start  '>
               <h4 className=' fw-bold pb-3'>{nombre}</h4>
@@ -91,13 +91,13 @@ export const ItemDetail = ({id,nombre,precio,imagen,imagen2,imagen3,stock,descri
               <p> Remera fit</p>
               <p>unidades existentes : {stock}</p>
             </Col>
-            <Col md={3} className=' fs-5 fw-bold'> $ {precio}</Col>
+            <Col md={3} className=' fs-5 fw-bold pt-5 pt-md-0'> $ {precio}</Col>
            </Row>
 
 
-           <Row className=' my-5 '>
+           <Row className=' my-5 d-flex justify-content-center '>
 
-            <Col md={8}>
+            <Col xs={10} md={8} className=''>
 
             <p className=' fw-bold'>selecciona el talle</p>
    
@@ -110,9 +110,9 @@ export const ItemDetail = ({id,nombre,precio,imagen,imagen2,imagen3,stock,descri
             
             </Col>
 
-            <Col md={4} className=' d-flex flex-column justify-content-center align-items-end'>
+            <Col xs={10} md={4} className=' d-flex flex-column justify-content-center pt-5 pt-md-0'>
             <p>unidades</p>
-            <ItemCount max={stock} modify={setCantidad} counter={cantidad}/>
+            <ItemCount max={stock} modify={setCantidad} counter={cantidad} />
 
             </Col>
            </Row>
