@@ -14,3 +14,15 @@
     letter-spacing: 2px;
 
 }
+
+.trash{
+    color: rgb(166, 166, 166);
+    cursor: pointer;
+    transition: 0.5s all;
+    background-color: rgba(0, 0, 255, 0);
+    
+}
+.trash:hover{
+    color: rgb(194, 17, 38);
+    
+}

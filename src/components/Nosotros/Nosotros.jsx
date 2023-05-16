@@ -10,16 +10,16 @@ export const Nosotros = () => {
 
  
   return (
-    <div className='' >
-      <Row className='container-fluid nosotros d-flex justify-content-around '>
+    <div className='pt-5' >
+      <Row className='container-fluid nosotros d-flex justify-content-around align-items-center py-5 my-5'>
 
-      <Col md={4}>
+      <Col md={5 } className=''>
 
-     <img src="./assets/123jpg" alt="" />
+     <img src="https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className='w-100' alt="" />
 
       </Col>
 
-      <Col md={6} className='columna  d-flex flex-column align-items-center bg-dark justify-content-between'>
+      <Col md={6} className='columna  d-flex flex-column align-items-center  justify-content-between'>
         <h2 className='py-5'>Nosotros</h2>
 
         <p className='pb-5'> 

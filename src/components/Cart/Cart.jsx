@@ -4,7 +4,7 @@ import './Cart.css'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
 import { ItemCount } from '../ItemCount/ItemCount'
-
+import {TfiTrash} from 'react-icons/tfi'
 
 
 export const Cart = () => {
@@ -14,14 +14,14 @@ export const Cart = () => {
    
 
    return (
-    <div className='container d-flex flex-column aling-item-center justify-content-center'>
+    <div className=' pt-5 container d-flex flex-column aling-item-center justify-content-center'>
 
       {
         carrito.length === 0 
         ?
         <>
 
-        <div className='carrito_vacio'>
+        <div className='carrito_vacio '>
          <h3>Carrito vacio</h3>
          <Link to='/'><button className='botones mt-5 '>Volver a comprar</button></Link> 
         </div>
@@ -29,7 +29,7 @@ export const Cart = () => {
         </>
         :
         <>
-           <h1 className='fila py-5'>Carrito de compras</h1>
+           <h3 className='fila py-5 my-5'>Carrito de compras</h3>
            <Row className=' container d-flex fila justify-content-center bg-dark py-2'>
             
             <Col md={2}>Producto</Col>
@@ -70,9 +70,9 @@ export const Cart = () => {
             </Col>
 
             <Col md={2}>
-             <button className='botones' onClick={()=> removerItem(prod)}>
-                Eliminar                
-             </button>
+             
+               <TfiTrash className='fs-3 trash' onClick={()=> removerItem(prod)}/>               
+             
             </Col>
 
            </Row>

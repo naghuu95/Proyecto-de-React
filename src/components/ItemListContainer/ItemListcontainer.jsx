@@ -5,7 +5,7 @@ import { getFirestore } from "../../firebase/config"
 import { ItemList } from "../ItemList/ItemList"
 import './ItemListContainer.css'
 import { useParams } from "react-router-dom"
-import {ImSpinner10} from 'react-icons/im'
+import {ImSpinner9} from 'react-icons/im'
 
 
 
@@ -60,12 +60,12 @@ const ItemListContainer =()=>{
       {
         loading
         ?<div className='caja_spinner'>
-            <ImSpinner10 className="spinner"/>
-            <h3 className="pt-3 ps-3 fs-5"> Cargando . . .</h3>
+            <ImSpinner9 className="spinner"/>
+            <h5 className="pt-3 ps-3 "> Cargando . . .</h5>
         </div>
         : 
         
-        <ItemList productos={productos} titulo={titulo}/>
+        <ItemList productos={productos} titulo={titulo} />
       }
 
      

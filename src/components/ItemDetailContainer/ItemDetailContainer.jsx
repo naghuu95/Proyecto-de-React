@@ -4,7 +4,7 @@ import { useEffect,useState } from "react"
 import { getFirestore } from "../../firebase/config";
 import { ItemDetail } from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom";
-import {ImSpinner10} from 'react-icons/im'
+import {ImSpinner9} from 'react-icons/im'
 import './ItemDetailContainer.css'
 
 
@@ -44,9 +44,9 @@ import './ItemDetailContainer.css'
          {
             loading ?
             <div className='caja_spinner'>
-            <ImSpinner10 className="spinner"/>
-            <h3 className="pt-3 ps-3 fs-5"> Cargando . . .</h3>
-            </div>
+            <ImSpinner9 className="spinner"/>
+            <h5 className="pt-3 ps-3 "> Cargando . . .</h5>
+             </div>
             
             /* <FontAwesomeIcon className=" loading fs-1 fa-spin" icon={faSpinner} />*/
              : <ItemDetail {... producto}/>

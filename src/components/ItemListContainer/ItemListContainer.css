@@ -9,9 +9,13 @@
 
 }
 
+.caja_spinner h5{
+  font-size: 0.8rem;
+}
+
 .spinner{
-    animation: spin 1s linear infinite;
-    font-size: 6rem;
+    animation: spin 2s linear infinite;
+    font-size: 3rem;
       
 }
 

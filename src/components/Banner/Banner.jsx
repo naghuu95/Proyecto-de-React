@@ -20,13 +20,10 @@ export const Banner = () => {
          />
 
         <div className='info '>
-          <div className='info_caja '>
-
-              <h1 className='titulo container  '> La mejor indumentaria deportiva la encuentras en FLUX</h1>
-              <p className=' mt-5 texto d-none d-md-block'>Ropa deportiva para gimnacio,para amantes del deporte ,para el dia a dia y para mucho mas</p>
-              <Link to={'/productos'}><button type='button' className='boton_inicio mt-2mt-md-5 bg-secondary botones'>HECHA UN VISTASO</button></Link>
-            
-
+          <div className='info_caja col-8'>
+              <h1 className='titulo container  '> Flux  tu estilo , tu potencia</h1>
+              <p className=' mt-5 texto d-none d-md-block'>¿Listo para llevar tu rendimiento al siguiente nivel? Descubre el poder de Flux, la combinación perfecta de estilo y funcionalidad en ropa deportiva de alto impacto</p>
+              <Link to={'/productos'}><button type='button' className='boton_inicio mt-2mt-md-5  botones'>HECHA UN VISTASO</button></Link>
           </div>
              
         </div>

@@ -4,22 +4,33 @@
   font-family: 'Rosmatika';
   src: local('Rosmatika'), url(./fuentes/RosmatikaRegular-BWA45.ttf) format('truetype');
   font-family: 'Queen';
-  src: local('Queen'), url(./fuentes/QueensidesLight-ZVj3l.ttf) format('truetype');
+  src: local('Queen'), url(./fuentes/QueensidesLight-ZVj3l.ttf) format('');
   font-family: 'Praysire';
   src: local('Praysire'), url(./fuentes/Praysire-Demo.otf) format('opentype');
+  font-family: 'Akira';
+  src: local('Akira'), url(./fuentes/Akira.otf) format('opentype');
   font-family: 'LEMON-l';
   src: local('LEMON-l'), url(./fuentes/LEMONMILK-Light.otf) format('opentype');
+  font-family: 'LEMON-M';
+  src: local('LEMON-M'), url(./fuentes/LEMON-M.otf) format('opentype');
+  font-family: 'MT';
+  src: local('MT'), url(./fuentes/Made-thin.otf) format('opentype');
+  font-family: 'ML';
+  src: local('ML'), url(./fuentes/Made-ligth.otf) format('opentype');
 }
+
 .App {
   text-align: center;
-  background-color: rgb(40, 40, 40);
+  background-color: rgb(0, 0, 0);
+  /*background-color: rgb(40, 40, 40);
   /*background-color: rgb(26, 18, 11);*/
-  font-family: 'LEMON-l', sans-serif;
-  font-weight: 100;
-  font-size: 0.8rem;
+  font-family: 'ML',sans-serif;
+  letter-spacing: 2px;
+  font-size: 1rem;
   color: #ffffff;
   overflow: hidden;
-  letter-spacing: 3px;
+  word-spacing: 2px;
+  
   
 }
 
@@ -69,13 +80,14 @@ h2{
 }
 
 .botones{
-  background-color: rgba(88, 88, 88, 0);
-  border: 3px solid rgb(166, 166, 166);
-  border-radius: 8px;
-  color: #ebebeb;
-  font-size: 0.7rem;
-  padding: 7px 20px;
+  background-color: rgba(135, 135, 135, 0);
+  border: 3px solid rgb(195, 110, 191);
+  border-radius: 20px;
+  color: #e1a5c0;
+  font-size: 1rem;
+  padding: 8px 30px;
   letter-spacing: 3.5px;
+  transition:0.5s all;
 
 
 
@@ -83,9 +95,9 @@ h2{
 
 .botones:hover{
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.715);
-  color: #000000df;
-  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.625);
+  background-color: rgb(0, 0, 0);
+  color: #fffdfddf;
+  box-shadow: 0px 0px 30px rgba(173, 89, 182, 0.625);
 
   
 }

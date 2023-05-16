@@ -9,13 +9,15 @@ import { CartProvider } from './components/context/CartContext';
 import { Checkout } from './components/Checkout/Checkout';
 import { PiePagina } from './components/PiePagina/PiePagina';
 import { Nosotros } from './components/Nosotros/Nosotros';
+import { Envio } from './components/Envio/Envio';
 import Home from './components/Home/Home';
+
 
 
 
 function App() {
 
-
+ 
 
   return (
 
@@ -24,13 +26,12 @@ function App() {
     <div className="App">
 
       <BrowserRouter>
+        
          <NavBar/>
          
          <Routes>
            
           <Route path="/" element={<Home />} />
-         
-
           <Route path='/productos' element={<ItemListContainer/>}/>
           <Route path='/nosotros' element={<Nosotros/>}/>
           <Route path='/categoria/:categoriaId' element={<ItemListContainer/>} />

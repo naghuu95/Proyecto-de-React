@@ -1,3 +1,11 @@
+
+@font-face {
+    font-family: 'MOB';
+    src: local('MOB'), url(../../fuentes/MADE\ Outer\ Sans\ Outline\ Alt\ Bold\ PERSONAL\ USE.otf) format('truetype');
+}
+
+
+
 .hero{
     
     height: 53rem;
@@ -10,18 +18,25 @@
 }
 
 .info{
-    height:53.5rem ;
+    height:50.5rem ;
     background-color: rgba(0, 0, 0, 0.697);
    position: relative;
-   bottom:53.8rem;
+   bottom:50.8rem;
    top: 50%;
 }
 
 .info_caja{
-    padding-top: 15rem;
+    height: 35%;
+    padding-top: 30rem;
+    text-align: start;
+    padding-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly ;
 }
 
 .titulo{
+    font-family: 'MOB',sans-serif;
     letter-spacing: 4px;
     font-weight: bold;
     color: rgb(255, 255, 255);

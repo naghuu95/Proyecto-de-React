@@ -24,11 +24,11 @@ import { Button } from 'react-bootstrap'
      return (
         <div className='Contador '>
             <div className='Controles '>
-                <Button variant="outline-secondary boton"onClick={decrementar} > - </Button>
+                <Button variant="outline-secondary boton fs-3"onClick={decrementar} > - </Button>
                
                 <h4 className='mx-2 fs-5'>{counter}</h4>
 
-                <Button variant="outline-secondary boton"onClick={incrementar} > +</Button>
+                <Button variant="outline-secondary fs-3 boton"onClick={incrementar} > +</Button>
             </div>
            
         </div>

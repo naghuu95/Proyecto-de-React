@@ -62,7 +62,7 @@ export const ItemDetail = ({id,nombre,precio,imagen,imagen2,imagen3,stock,descri
 
     return(
 
-          <div className=' py-5 bg-dark row d-flex justify-content-evenly'>
+          <div className=' py-5 mt-5 row d-flex justify-content-evenly'>
 
             <Col xs={10} sm={10} md={5} className=' d-flex flex-column justify-content-center'> 
             <Row className=' d-flex justify-content-evenly'>
@@ -99,7 +99,7 @@ export const ItemDetail = ({id,nombre,precio,imagen,imagen2,imagen3,stock,descri
 
             <Col xs={10} md={8} className=''>
 
-            <p className=' fw-bold'>selecciona el talle</p>
+            <p className=' fw-bold'>Selecciona el talle</p>
    
             <div class="btn-group  w-100" role="group" id='talles' aria-label="Basic outlined example">
               <button type="button" className={`talle btn  btn-secondary me-2  ${talle === "S" ? "active" : ""}`} value="S" onClick={handleTalleClick}>S</button>
@@ -111,7 +111,7 @@ export const ItemDetail = ({id,nombre,precio,imagen,imagen2,imagen3,stock,descri
             </Col>
 
             <Col xs={10} md={4} className=' d-flex flex-column justify-content-center pt-5 pt-md-0'>
-            <p>unidades</p>
+            <p>Unidades</p>
             <ItemCount max={stock} modify={setCantidad} counter={cantidad} />
 
             </Col>
@@ -120,8 +120,8 @@ export const ItemDetail = ({id,nombre,precio,imagen,imagen2,imagen3,stock,descri
 
            <Row className='d-flex justify-content-center py-5'>
             <Col md={11}>
-            <button variant="outline-secondary" className='botones py-3 w-100'  onClick={ sumarAlCarrito}  > Agregar al carrito</button>
-            <Link to='/cart'> <button className='botones mt-3 w-100 py-3' > Ir al carrito</button> </Link>
+            <button variant="outline-secondary" className='botones w-100 py-2 btn-detalle'  onClick={ sumarAlCarrito}  > AGREGAR AL CARRITO</button>
+            <Link to='/cart'> <button className='botones mt-3 w-100 py-2 btn-detalle' > IR AL CARRITO</button> </Link>
             <Toaster position='top-center' toastOptions={{className: 'mensaje',}}/>
             </Col>
            

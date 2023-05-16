@@ -15,10 +15,12 @@ export const CartWidget = () => {
      
       <div  className='position-relative '>
       <HiOutlineShoppingBag className='fs-4 carrito'/>
-      <span class="circulo position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" >
+      {calcularCantidad() > 0 && (
+      <span className="circulo position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
       {calcularCantidad()}
-      <span class="visually-hidden" >{calcularCantidad()}</span>
+      <span className="visually-hidden">{calcularCantidad()}</span>
       </span>
+      )}
       </div>
    
     </div>

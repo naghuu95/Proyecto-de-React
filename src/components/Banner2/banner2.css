@@ -1,0 +1,37 @@
+
+@font-face {
+    font-family: 'MOSM';
+    src: local('MOSM'), url(../../fuentes/MADE\ Outer\ Sans\ Alt\ Medium\ PERSONAL\ USE.otf) format('truetype');
+}
+
+
+.banner2{
+   font-family: 'MOSM' ,sans-serif;
+  
+}
+
+.caja_img{
+    height: 700px; 
+   overflow: hidden; 
+   position:relative;
+   
+  
+}
+
+.caja_img img{
+    height: 100%;
+    width: auto; 
+    object-fit: cover; 
+   
+}
+
+.caja_info{
+    position: absolute;
+    padding-top: 20rem;
+    margin-left: 8rem;
+    text-align: start;
+    color: rgba(255, 255, 255, 0.842);
+}
+
+
+

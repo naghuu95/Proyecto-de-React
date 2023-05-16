@@ -1,0 +1,9 @@
+
+@font-face {
+    font-family: 'MOB';
+    src: local('MOB'), url(../../fuentes/MADE\ Outer\ Sans\ Outline\ Alt\ Bold\ PERSONAL\ USE.otf) format('truetype');
+}
+
+.titulo_items{
+    font-family:'MOB',sans-serif ;
+}

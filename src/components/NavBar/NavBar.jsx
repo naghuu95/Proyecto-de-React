@@ -3,19 +3,24 @@ import { CartWidget } from "../CartWidget/CartWidget"
 import "./navBar.css"
 import { Col, Row } from "react-bootstrap"
 import {Navbar,Nav,Container,NavDropdown} from "react-bootstrap"
+import { Envio } from "../Envio/Envio"
+
 
 const NavBar =()=>{
     return(
 
 
 
+      <div className="header">
 
-      <Navbar  variant="dark" className="container-fluid  d-flex justify-content-around  " id="fixed" expand="lg">
+        <Envio />
+
+      <Navbar  variant="dark" className="container-fluid header d-flex justify-content-around  "  expand="lg">
       
-      
+         
           <Navbar.Brand href="#home " className=" col-sm-1 col-md-3 navbar ">
           <Link to='/' className="link-logo    ">
-         
+
             <h2 className="logo ps-3 ps-md-5 "> FLUX</h2>
           </Link>
           </Navbar.Brand>
@@ -38,9 +43,10 @@ const NavBar =()=>{
           <Link className="link d-none d-md-block  col-1 " to='/cart'><CartWidget /> </Link>
         </Navbar.Collapse>
        
-      
-      
       </Navbar>
+
+      </div>
+      
 
 
 
