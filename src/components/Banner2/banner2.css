@@ -28,9 +28,12 @@
 .caja_info{
     position: absolute;
     padding-top: 20rem;
+    padding-bottom: 10rem;
     margin-left: 8rem;
     text-align: start;
     color: rgba(255, 255, 255, 0.842);
+    background-color: rgba(0, 0, 0, 0.456);
+    box-shadow: 0px 0px 50rem rgb(0, 0, 0);;
 }
 
 
