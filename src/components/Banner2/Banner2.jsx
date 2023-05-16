@@ -18,7 +18,7 @@ export const Banner2 = () => {
         <h1 className='titulo  '> FORJA TU LEGADO</h1>
         <p className=' mt-5 texto d-none d-md-block'>Los estilos clásicos se encuentran con la funcionalidad moderna en nuestros shorts,
            con cortes clásicos, telas frescas y un diseño que rinde homenaje a nuestro legado FLUX.</p>
-        <Link to={'/categorias/shorts'}><button type='button' className='boton_inicio mt-2mt-md-5  botones'>EXPLORA NUESTRA COLECCIÓN DE SHORTS</button></Link>
+        <Link to={'/categoria/shorts'}><button type='button' className='boton_inicio mt-2mt-md-5  botones'>EXPLORA NUESTRA COLECCIÓN DE SHORTS</button></Link>
       </div>
 
         
